@@ -1,0 +1,77 @@
+- var titleProduct = page_meta.h1
+- var text2 = page_text[1].content
+- var text3 = page_text[2].content
+doctype html
+html(lang="en")
+    include head.pug
+    body 
+      div.main
+        header.header
+            div.header-top
+                a.header-logo(href="#")
+                    img.logo-image(src="images/logo.png" alt="logo")
+                div.header-contact
+                    a(href="tel:+375 44 731 25 64").header-contact__image
+                        img.header-contact__image_inner(src="images/header-contact.png" alt="contact")
+                    div.heder-contact__inner
+                        div.header-contact__local
+                            img.header-local__vector(src="images/header-contact-vector.png" alt="vector")
+                            p.header-local__text Specify your region
+                        a.header-contact__tel(href="tel:+375 44 731 45 55") +375 44 731 45 55
+                div.header-time
+                    div.header-time__img
+                        img.header-time__img_inner(src="images/time.png" alt="time")
+                    div.header-time__text. 
+                        Mon-Sat 10: 00-20: 00,
+                        Sun Day Off    
+            include menu.pug 
+        section.catalog
+            div.pages
+                div.pages-item.pages-item1(data-f='DAF') DAF
+                div.pages-item.pages-item2(value='FORD') FORD 
+            div.catalog_wrap
+                div.find
+                    div.find__title Number of cars found
+                    div.find-parametr1.find-parametr
+                        div.title_wrap
+                            div.find-parametr1__title.title Car power
+                            img(src="images/dropdown-arrow.svg" alt="arrow")
+                        label.find-parametr1__item
+                            input.find-parametr1__input.find-parametr1__input1(type="checkbox" value='min') 
+                            div.parametr1-item__text less than 400
+                        label.find-parametr1__item
+                             input.find-parametr1__input.find-parametr1__input2(type="checkbox" value='max')
+                             div.parametr1-item__text  More 400
+                        label
+                    div.find-parametr2.find-parametr
+                        div.title_wrap
+                            div.find-parametr2__title.title Year of production of the car  
+                            img(src="images/dropdown-arrow.svg" alt="")
+                        label
+                            input.find-parametr2__input(type="radio" name="car-year" value="2021")
+                            div.parametr1-item__text New
+                        label
+                            input.find-parametr2__input(type="radio" name="car-year" value="2020")
+                            div.parametr1-item__text 2015 - 2020 years 
+                        label
+                            input.find-parametr2__input(type="radio" name="car-year" value="2015")
+                            div.parametr1-item__text 2010 - 2015 years  
+                        label
+                            input.find-parametr2__input(type="radio" name="car-year" value="2010")
+                            div.parametr1-item__text 2000 - 2010 years
+                    div.find-parametr3.find-parametr
+                        div.title_wrap
+                            div.find-parametr3__title.title Price range                            
+                            img(src="images/dropdown-arrow.svg" alt="")
+                        div.find-parametr3_inner
+                            input.find-parametr3_input--min(type="number" placeholder="min")
+                            input.find-parametr3_input--max(type="number" placeholder="max")
+                    div.form-button ПОИСК 
+                div.content
+                    div.content__title #{titleProduct}
+                    include product.pug
+                    div.text 
+                        div.text_inner #{text2} 
+                        div.text_inner #{text3} 
+        include footer.pug
+    script(src="js/main.min.js")

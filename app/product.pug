@@ -1,0 +1,29 @@
+- var product  =  stock
+each item in product
+    div.content-block
+        div.image_wrap
+            img.content-block__image(src=`images/images-products/${item.image}` alt="")
+        div.content-box
+            div.content-box__title= item.title
+            div.content-box--name
+                div.content-box__make= item.make
+                div.content-box__model= item.model
+            div.content-box__text #{page_text[0].content}
+            div.content-box__indicators
+                div.indicators__item
+                    div.indicators__item--year= item.year
+                    div year
+                div.indicators__item
+                    div= item.mileage
+                    div= item.mileage_measure
+                div.indicators__item
+                    div= item.axle_configuration
+                    div m
+                //- div.indicators__item= item.payload 
+                //- div.indicators__item= item.gross_weight
+                div.indicators__item
+                    div.indicators__item--power= item.power 
+                    div= item.power_measure
+        div.content-block__price   
+            div.content-price= item.price 
+            div= item.price_currency
